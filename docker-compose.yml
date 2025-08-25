@@ -1,0 +1,14 @@
+services:
+  uploader:
+    build: .
+    container_name: mime-uploader
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_ENV=production
+      - TZ=Asia/Taipei
+    volumes:
+      - uploads:/app/uploads
+
+volumes:
+  uploads:
